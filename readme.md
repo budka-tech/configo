@@ -1,4 +1,4 @@
-# configloader
+# configo
 
 Загрузка конфиг файла из флага -config
 

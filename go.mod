@@ -1,4 +1,4 @@
-module gitlab.com/standart-dev/core-pkg-configloader
+module gitlab.com/standart-dev/core-configo
 
 go 1.23.0
 
