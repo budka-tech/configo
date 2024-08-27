@@ -4,6 +4,7 @@ import (
 	"flag"
 	"github.com/ilyakaznacheev/cleanenv"
 	"os"
+	"time"
 )
 
 type Database struct {
@@ -26,6 +27,18 @@ type Redis struct {
 type Sentry struct {
 	Host string `yaml:"host" env-required:"true"`
 	Key  string `yaml:"key" env-required:"true"`
+}
+
+type Ws struct {
+	Port               int     `yaml:"port" env-required:"true"`
+	MaxOneIpConnection int     `yaml:"maxOneIpConnection" env-required:"true"`
+	Session            session `yaml:"session"`
+}
+
+type session struct {
+	MinPingDuration       time.Duration `yaml:"minPingDuration" env-required:"true"`
+	MaxPingDuration       time.Duration `yaml:"maxPingDuration" env-required:"true"`
+	MaxInactivityDuration time.Duration `yaml:"maxInactivityDuration" env-required:"true"`
 }
 
 func MustLoad[TConfig any]() *TConfig {
