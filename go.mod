@@ -1,4 +1,4 @@
-module gitlab.com/standart-dev/core-configo
+module github.com/budka-tech/configo
 
 go 1.23.0
 
