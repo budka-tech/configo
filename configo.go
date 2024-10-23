@@ -15,7 +15,8 @@ type Database struct {
 	User          string `yaml:"user" env-required:"true"`
 	Password      string `yaml:"password" env-required:"true"`
 	Schema        string `yaml:"schema" env-default:"public"`
-	MigrationPath string `yaml:"migration_path" env-required:"true"`
+	MigrationPath string `yaml:"migrationPath" env-required:"true"`
+	MaxAttempts   int    `yaml:"maxAttempts" env-required:"true"`
 }
 
 type Redis struct {
