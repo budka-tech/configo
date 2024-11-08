@@ -7,6 +7,25 @@ import (
 	"time"
 )
 
+type App struct {
+	Name    string `yaml:"name" env-required:"true"`
+	Version string `yaml:"version" env-required:"true"`
+}
+
+type Logger struct {
+	Level         int    `yaml:"level" env-default:"0"`
+	Dir           string `yaml:"dir" env-default:"logs"`
+	MaxSize       int    `yaml:"maxSize" env-required:"10"`
+	MaxBackups    int    `yaml:"maxBackups" env-required:"3"`
+	MaxAge        int    `yaml:"maxBackups" env-required:"365"`
+	Compress      bool   `yaml:"compress" env-default:"true"`
+	ConsoleLevel  int    `yaml:"consoleLevel" env-default:"0"`
+	FileLevel     int    `yaml:"fileLevel" env-default:"0"`
+	EnableConsole bool   `yaml:"enableConsole" env-default:"true"`
+	EnableFile    bool   `yaml:"enableFile" env-default:"true"`
+	TimeFormat    string `yaml:"timeFormat" env-default:"2006-01-02T15:04:05.000Z07:00"`
+}
+
 type Database struct {
 	Type          string        `yaml:"type" env-required:"true"`
 	Host          string        `yaml:"host" env-required:"true"`
