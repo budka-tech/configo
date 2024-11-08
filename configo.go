@@ -19,6 +19,7 @@ type Logger struct {
 	MaxBackups    int    `yaml:"maxBackups" env-required:"3"`
 	MaxAge        int    `yaml:"maxBackups" env-required:"365"`
 	Compress      bool   `yaml:"compress" env-default:"true"`
+	RotationTime  string `yaml:"rotationTime" env-default:"24h"`
 	ConsoleLevel  int    `yaml:"consoleLevel" env-default:"0"`
 	FileLevel     int    `yaml:"fileLevel" env-default:"0"`
 	EnableConsole bool   `yaml:"enableConsole" env-default:"true"`
