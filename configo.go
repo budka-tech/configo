@@ -61,6 +61,12 @@ type Ws struct {
 	Session            session `yaml:"session"`
 }
 
+type S3 struct {
+	Endpoint  int     `yaml:"endpoint" env-required:"true"`
+	AccessKey int     `yaml:"accessKey" env-required:"true"`
+	SecretKey session `yaml:"secretKey" env-required:"true"`
+}
+
 type session struct {
 	MinPingDuration       time.Duration `yaml:"minPingDuration" env-required:"true"`
 	MaxPingDuration       time.Duration `yaml:"maxPingDuration" env-required:"true"`
