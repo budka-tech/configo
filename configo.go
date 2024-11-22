@@ -55,16 +55,17 @@ type Service struct {
 	Port uint16 `yaml:"port" env-required:"true"`
 }
 
+type S3 struct {
+	Endpoint  string `yaml:"endpoint" env-required:"true"`
+	Region    string `yaml:"region" env-required:"true"`
+	AccessKey string `yaml:"accessKey" env-required:"true"`
+	SecretKey string `yaml:"secretKey" env-required:"true"`
+}
+
 type Ws struct {
 	Port               int     `yaml:"port" env-required:"true"`
 	MaxOneIpConnection int     `yaml:"maxOneIpConnection" env-required:"true"`
 	Session            session `yaml:"session"`
-}
-
-type S3 struct {
-	Endpoint  int     `yaml:"endpoint" env-required:"true"`
-	AccessKey int     `yaml:"accessKey" env-required:"true"`
-	SecretKey session `yaml:"secretKey" env-required:"true"`
 }
 
 type session struct {
